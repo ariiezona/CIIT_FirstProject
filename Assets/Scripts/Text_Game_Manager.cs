@@ -13,7 +13,7 @@ public class Text_Game_Manager : MonoBehaviour
     //declares string variable
     public string startOfStory;
     //declares game object
-    public GameObject level1_Choices;
+    public GameObject level1_Choices, HpTextGO, HpValueGO, StaminaText, StaminaValueGO, MainMenuGO, MainMenuText;
 
 
     // Start is called before the first frame update
@@ -21,7 +21,6 @@ public class Text_Game_Manager : MonoBehaviour
     {
         hpValue = 10;
         sanityValue = 10;
-        startOfStory = "I woke up from a deep and refreshing sleep";
     }
 
     // Update is called once per frame
@@ -46,5 +45,21 @@ public class Text_Game_Manager : MonoBehaviour
     public void goBackToSleep()
     {
 
+    }
+
+    public void startButton()
+    {
+        level1_Choices.SetActive(true);
+        HpTextGO.SetActive(true);
+        HpValueGO.SetActive(true);
+        StaminaText.SetActive(true);
+        StaminaValueGO.SetActive(true);
+        MainMenuGO.SetActive(false);
+        MainMenuText.SetActive(false);
+        startOfStory = "I woke up from a deep and refreshing sleep";
+    }
+    public void exitButton()
+    {
+        Application.Quit();
     }
 }
